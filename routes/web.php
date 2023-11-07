@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Livewire\GestionCompany\CompanyManagement;
 use App\Http\Livewire\GestionCompany\CompanyProfil;
 use Illuminate\Support\Facades\Route;
 
@@ -52,5 +53,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/rtl', Rtl::class)->name('rtl');
     Route::get('/laravel-user-profile', UserProfile::class)->name('user-profile');
     Route::get('/company-profile', CompanyProfil::class)->name('company-profile');
+    Route::get('/company-management', CompanyManagement::class)->name('company-management');
     Route::get('/laravel-user-management', UserManagement::class)->name('user-management');
 });
