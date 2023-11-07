@@ -5,7 +5,7 @@
             aria-hidden="true" id="iconSidenav"></i>
         <a class="align-items-center d-flex m-0 navbar-brand text-wrap" href="{{ route('dashboard') }}">
             <img src="../assets/img/logo-ct.png" class="navbar-brand-img h-100" alt="...">
-            <span class="ms-3 font-weight-bold">Soft UI Dashboard Laravel Livewire</span>
+            <span class="ms-3 font-weight-bold">IndustriKonnekt</span>
         </a>
     </div>
     <hr class="horizontal dark mt-0">
@@ -268,11 +268,6 @@
                     <span class="nav-link-text ms-1">Sign Up</span>
                 </a>
             </li>
-            <li class="nav-link mb-0">
-                <a href="https://www.creative-tim.com/product/soft-ui-dashboard-pro-laravel-livewire"
-                    class="btn btn-primary btn-md active px-5 text-white" target="_blank" role="button" aria-pressed="true">
-                    Upgrade to PRO</a>
-            </li>
         </ul>
     </div>
     <div class="sidenav-footer mx-3 mt-3 pt-3">
@@ -285,12 +280,12 @@
                     <i class="ni ni-diamond text-dark text-gradient text-lg top-0" aria-hidden="true"
                         id="sidenavCardIcon"></i>
                 </div>
-                <div class="docs-info">
+                {{-- <div class="docs-info">
                     <h6 class="text-white up mb-0">Need help?</h6>
                     <p class="text-xs font-weight-bold">Please check our docs</p>
                     <a href="/documentation/bootstrap/overview/soft-ui-dashboard/index.html" target="_blank"
                         class="btn btn-white btn-sm w-100 mb-0">Documentation</a>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
