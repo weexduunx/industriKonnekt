@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Livewire\GestionCompany\CompanyProfil;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Livewire\Auth\ForgotPassword;
@@ -50,6 +51,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/static-sign-up', StaticSignUp::class)->name('static-sign-up');
     Route::get('/rtl', Rtl::class)->name('rtl');
     Route::get('/laravel-user-profile', UserProfile::class)->name('user-profile');
+    Route::get('/company-profile', CompanyProfil::class)->name('company-profile');
     Route::get('/laravel-user-management', UserManagement::class)->name('user-management');
 });
-
