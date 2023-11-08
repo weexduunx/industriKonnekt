@@ -6,6 +6,7 @@ use App\Models\Company;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Notification;
 
 class CompanyManagement extends Component
 {
@@ -82,9 +83,13 @@ class CompanyManagement extends Component
                
         Company::create($this->company);
 
-        session()->flash('message', 'Entreprise créée avec succès.');
+        // Afficher une alerte avec Toastr JS
+        $this->emit('showSuccessAlert', ['message' => 'Entreprise ajoutée avec succés']);
+
+        // Fermer le modal
         $this->closeModal();
     }
+
 
     public function edit($id)
     {

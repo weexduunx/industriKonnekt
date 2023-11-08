@@ -323,10 +323,9 @@
                         </div>
                     </div>
                    
-
                     <div class="modal-footer">
-                            <button type="button" class="btn bg-gradient-light btn-md mt-4 mb-4" data-bs-dismiss="modal">Close</button>
-                            <button type="submit" class="btn bg-gradient-dark btn-md mt-4 mb-4">{{ 'Save Changes' }}</button>
+                        <button type="button" class="btn bg-gradient-light btn-md mt-4 mb-4" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn bg-gradient-dark btn-md mt-4 mb-4">{{ 'Save Changes' }}</button>
                     </div>
             </form>
             </div>
@@ -335,3 +334,14 @@
         </div>
     </div>
 </div>
+@push('scripts')
+<script>
+    window.livewire.on('showSuccessAlert', event => {
+        Swal.fire({
+            title: 'Succès',
+            text: event.message,
+            icon: 'success',
+        });
+    });
+</script>
+@endpush
