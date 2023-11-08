@@ -41,7 +41,18 @@
             </li>
 
             <li class="nav-item mt-2">
-                <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Laravel Examples</h6>
+                <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Gestion des Entreprises</h6>
+            </li>
+            <li class="nav-item pb-2">
+                <a class="nav-link {{ Route::currentRouteName() == 'company-management' ? 'active' : '' }}"
+                    href="{{ route('company-management') }}">
+                    <div
+                        class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i style="font-size: 1rem;" class="fas fa-lg fa-list-ul ps-2 pe-2 text-center
+                        {{ in_array(request()->route()->getName(),['user-management']) ? 'text-white' : 'text-dark' }}"></i>
+                    </div>
+                    <span class="nav-link-text ms-1">Gestion Entreprise</span>
+                </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link {{ Route::currentRouteName() == 'company-profile' ? 'active' : '' }}"
@@ -74,17 +85,7 @@
                     <span class="nav-link-text ms-1">Profil Entreprise</span>
                 </a>
             </li>
-            <li class="nav-item pb-2">
-                <a class="nav-link {{ Route::currentRouteName() == 'company-management' ? 'active' : '' }}"
-                    href="{{ route('company-management') }}">
-                    <div
-                        class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <i style="font-size: 1rem;" class="fas fa-lg fa-list-ul ps-2 pe-2 text-center
-                        {{ in_array(request()->route()->getName(),['user-management']) ? 'text-white' : 'text-dark' }}"></i>
-                    </div>
-                    <span class="nav-link-text ms-1">Gestion Entreprise</span>
-                </a>
-            </li>
+
             <li class="nav-item">
                 <a class="nav-link {{ Route::currentRouteName() == 'user-profile' ? 'active' : '' }}"
                     href="{{ route('user-profile') }}">

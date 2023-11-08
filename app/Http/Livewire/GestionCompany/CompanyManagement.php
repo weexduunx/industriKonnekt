@@ -7,6 +7,7 @@ use Livewire\Component;
 use Livewire\WithFileUploads;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Notification;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class CompanyManagement extends Component
 {
@@ -24,7 +25,7 @@ class CompanyManagement extends Component
     //     'company.user_id ' => 'min:1',
     // ];
     public $company;
-    public $isOpen = 0;
+    public $isOpen = true;
     public $logo ;
 
     public function render()
@@ -36,22 +37,10 @@ class CompanyManagement extends Component
         ]);
     }
 
-    public function create()
-    {
-        $this->reset();
-        $this->openModal();
-    }
-
     public function openModal()
     {
         $this->isOpen = true;
     }
-
-    public function closeModal()
-    {
-        $this->isOpen = false;
-    }
-
     public function store()
     {
         $this->validate([
@@ -82,20 +71,27 @@ class CompanyManagement extends Component
 
                
         Company::create($this->company);
+        // Alert::success('Success', 'Entreprise créée avec succès.');
+        $this->emit('swal:modal', [
+            'icon'  => 'success',
+            'type'  => 'success',
+            'title' => 'Succés',
+            'text'  => "Entreprise créée avec succès",
+        ]);
 
-        // Afficher une alerte avec Toastr JS
-        $this->emit('showSuccessAlert', ['message' => 'Entreprise ajoutée avec succés']);
+        $this->reset();
+        // $this->isOpen = false;
 
-        // Fermer le modal
-        $this->closeModal();
     }
 
 
     public function edit($id)
     {
+        
         $company = Company::find($id);
         $this->company = $company;
-        $this->openModal();
+        // Émettez un événement pour ouvrir le modal
+        $this->emit('openEditModal');
     }
 
     public function update()

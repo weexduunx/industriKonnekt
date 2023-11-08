@@ -54,5 +54,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/laravel-user-profile', UserProfile::class)->name('user-profile');
     Route::get('/company-profile', CompanyProfil::class)->name('company-profile');
     Route::get('/company-management', CompanyManagement::class)->name('company-management');
+    Route::get('/company-management/edit/{id}', [CompanyManagement::class, 'edit'],)->name('company.edit');
     Route::get('/laravel-user-management', UserManagement::class)->name('user-management');
 });
